@@ -13,7 +13,7 @@ import service.VilleService;
 /**
  * Servlet implementation class AjoutVille
  */
-@WebServlet("/ajoutVille")
+@WebServlet("/AjoutVille")
 public class AjoutVille extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -45,10 +45,11 @@ public class AjoutVille extends HttpServlet {
 		String latitude = request.getParameter("latitude");
 		String longitude = request.getParameter("longitude");
 		Ville villeTemp = new Ville(codeCommune,nom,codePostal,libelle,ligne5,latitude,longitude);
-		
+		System.out.println(codeCommune);
 		villeServ.ajouterVille(villeTemp);
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);	
-	}
+
+		}
 
 }

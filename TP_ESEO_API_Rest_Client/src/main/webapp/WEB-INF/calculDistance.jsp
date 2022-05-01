@@ -45,7 +45,7 @@
 	</form>
 	<br>
 	<div class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-		<a href="/Accueil">Annuler</a>
+		<a href="/">Annuler</a>
 	</div>
 </body>
 	<footer class="fixed left-0 bottom-0 inset-x-0 bottom-0 p-4 bg-white rounded-lg shadow md:items-center dark:bg-gray-800">

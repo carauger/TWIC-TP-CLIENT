@@ -13,7 +13,7 @@ import service.VilleService;
 /**
  * Servlet implementation class SupprimerVille
  */
-@WebServlet("/supprVille")
+@WebServlet("/SupprimerVille")
 public class SupprimerVille extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

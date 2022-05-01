@@ -1,24 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xmlns:web="http://java.sun.com/xml/ns/javaee" xmlns:web_1="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://java.sun.com/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="5.0">
-  <display-name>Villes</display-name>
-  <servlet>
-    <description></description>
-    <display-name>Afficher</display-name>
-    <servlet-name>Afficher</servlet-name>
-    <servlet-class>servlet.Afficher</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Afficher</servlet-name>
-    <url-pattern>/Afficher</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>CalculDistancee</display-name>
-    <servlet-name>CalculDistancee</servlet-name>
-    <servlet-class>servlet.CalculDistancee</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>CalculDistancee</servlet-name>
-    <url-pattern>/CalculDistancee</url-pattern>
-  </servlet-mapping>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<servlet>
+		<servlet-name>Accueil</servlet-name>
+		<servlet-class>servlet.Accueil</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Accueil</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ModifierVille</servlet-name>
+		<servlet-class>servlet.ModifierVille</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ModifierVille</servlet-name>
+		<url-pattern>/modifVille</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AjoutVille</servlet-name>
+		<servlet-class>servlet.AjoutVille</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AjoutVille</servlet-name>
+		<url-pattern>/ajoutVille</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>SupprimerVille</servlet-name>
+		<servlet-class>servlet.SupprimerVille</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SupprimerVille</servlet-name>
+		<url-pattern>/supprVille</url-pattern>
+	</servlet-mapping>
 </web-app>

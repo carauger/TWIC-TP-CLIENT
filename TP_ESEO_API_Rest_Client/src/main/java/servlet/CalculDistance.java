@@ -13,7 +13,7 @@ import service.VilleService;
 /**
  * Servlet implementation class CalculDistancee
  */
-@WebServlet("/calculDistance")
+@WebServlet("/CalculDistance")
 public class CalculDistance extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
