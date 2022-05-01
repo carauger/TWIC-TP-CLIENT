@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	version="2.5">
-	<servlet>
-		<description></description>
-		<display-name>Ville</display-name>
-		<servlet-name>Ville</servlet-name>
-		<servlet-class>com.servlet.Ville</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Ville</servlet-name>
-		<url-pattern>/Ville</url-pattern>
-	</servlet-mapping>
-	<display-name>TP_ESEO_API_Rest_Client</display-name>
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
-	</welcome-file-list>
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp"
+	xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+	version="5.0">
+	
+	<display-name>Villes</display-name>
+
 </web-app>

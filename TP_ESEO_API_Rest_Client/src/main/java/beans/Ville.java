@@ -1,4 +1,4 @@
-package com.bean;
+package beans;
 
 public class Ville {
 	
