@@ -11,12 +11,12 @@
 <body>	
 	<br>
 	<br>
-	<form action="calculDistance" method="post">
+	<form action="" method="post">
 		
 		<label for="ville1">Ville de départ</label> 
 		<select name="ville1" id="ville1">
 			<option value="">-</option>
-			<c:forEach items="${ville}" var="current" varStatus="status">
+			<c:forEach items="${villes}" var="current" varStatus="status">
 				<option value="${current.getCodeCommuneINSEE()}">
 					${current.getNomCommune()} (${current.getCodePostal()})
 				</option>
@@ -26,7 +26,7 @@
 		<label for="ville2">Ville d'arrivée</label> 
 		<select name="ville2" id="ville2" onchange="">
 			<option value="">-</option>
-			<c:forEach items="${ville}" var="current" varStatus="status">
+			<c:forEach items="${villes}" var="current" varStatus="status">
 				<option value="${current.getCodeCommuneINSEE()}">
 					${current.getNomCommune()} (${current.getCodePostal()})
 				</option>
