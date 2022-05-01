@@ -1,8 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,34 +11,41 @@ import beans.Ville;
 import service.VilleService;
 
 /**
- * Servlet implementation class Accueil
+ * Servlet implementation class CalculDistancee
  */
-@WebServlet({"/Accueil","/"})
-public class Accueil extends HttpServlet {
+@WebServlet("/calculDistance")
+public class CalculDistance extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Accueil() {
+    public CalculDistance() {
         super();
     }
-
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		VilleService villeServ = new VilleService();
-		List<Ville> ville;
-		ville = villeServ.getVilles();
-		request.setAttribute("villesAffichees", ville);
-		this.getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);	
-    }
+		request.setAttribute("villes", villeServ.getVilles());
+        this.getServletContext().getRequestDispatcher("/WEB-INF/calculDistance.jsp").forward(request, response);	
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Ville villeDepart = new Ville();
+		Ville villeArrivee = new Ville();
+
+		// Retrieving Ville inputs from JSP
+		villeDepart.setCodeCommuneINSEE(request.getParameter("ville1"));
+		villeArrivee.setCodeCommuneINSEE(request.getParameter("ville2"));
+		
+		// Setting attribute "distance" to value returned by DAO getDistance() 
+		request.setAttribute("distance", villeDepart.getDistance(villeArrivee));
 		doGet(request, response);
 	}
 

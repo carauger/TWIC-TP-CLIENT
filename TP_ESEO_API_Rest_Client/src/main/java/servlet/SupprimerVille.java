@@ -1,8 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,16 +11,16 @@ import beans.Ville;
 import service.VilleService;
 
 /**
- * Servlet implementation class Accueil
+ * Servlet implementation class SupprimerVille
  */
-@WebServlet({"/Accueil","/"})
-public class Accueil extends HttpServlet {
+@WebServlet("/supprVille")
+public class SupprimerVille extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Accueil() {
+    public SupprimerVille() {
         super();
     }
 
@@ -30,18 +28,19 @@ public class Accueil extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		VilleService villeServ = new VilleService();
-		List<Ville> ville;
-		ville = villeServ.getVilles();
-		request.setAttribute("villesAffichees", ville);
-		this.getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);	
-    }
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		String codeCommune = request.getParameter("codeCommuneInsee");
+        VilleService villeServ = new VilleService();
+        Ville villeTemp = villeServ.trouverVille(codeCommune);
+      
+		villeServ.supprimerVille(villeTemp);
+		this.doGet(request, response);
 	}
 
 }

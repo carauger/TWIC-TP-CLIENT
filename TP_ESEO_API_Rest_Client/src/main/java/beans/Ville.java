@@ -10,7 +10,9 @@ public class Ville {
 	public String latitude;
 	public String longitude;
 	
-
+	public Ville() {
+		super();
+	}
 	public Ville(String codeCommuneINSEE, String nomCommune, String codePostal, String libelleAcheminement,
 			String ligne5, String latitude, String longitude) {
 		super();
@@ -78,5 +80,24 @@ public class Ville {
 		this.longitude = longitude;
 	}
 	
+	public double getDistance(Ville ville2) {
+
+        double distance = 0;
+
+        double longitudeVille1 = Double.valueOf(this.getLongitude());
+        double longitudeVille2 = Double.valueOf(ville2.getLongitude());
+
+        double latitudeVille1 = Double.valueOf(this.getLatitude());
+        double latitudeVille2 = Double.valueOf(ville2.getLatitude());
+
+
+        double un = (longitudeVille2 - longitudeVille1) * Math.cos((latitudeVille2 + latitudeVille1)/2);
+        double delta = latitudeVille2 - latitudeVille1;
+        double pyth = Math.sqrt(Math.pow(un, 2) + Math.pow(delta, 2));
+
+        distance = 1.852 * 60 * pyth;
+
+        return distance;
+    }
 	
 }
